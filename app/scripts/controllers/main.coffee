@@ -6,4 +6,5 @@ angular.module('pdsExplorerApp')
       'HTML5 Boilerplate'
       'AngularJS'
       'Karma'
+      'Testing Awesome Things!'
     ]
