@@ -1,16 +1,21 @@
 'use strict'
 
-angular
-  .module('pdsExplorerApp', [
+angular.module('pdsExplorerApp', [
     'ngResource',
     'ngSanitize',
-    'ngRoute'
-  ])
-  .config ($routeProvider) ->
-    $routeProvider
-      .when '/',
-        templateUrl: 'views/main.html'
-        controller: 'MainCtrl'
-      .otherwise
-        redirectTo: '/'
+    'ui.router'
+])
 
+.config ($stateProvider, $urlRouterProvider) ->	
+
+	$urlRouterProvider.otherwise '/'
+
+	# http://scotch.io/tutorials/javascript/angular-routing-using-ui-router
+	$stateProvider
+		.state 'main', {
+			url: '/'
+			templateUrl: 'views/main.html'
+			controller: 'MainCtrl'
+		}
+		
+		.state 'about', {}

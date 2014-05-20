@@ -23,3 +23,7 @@ npm install grunt-google-cdn
 
 
 [Coffeescript source maps with Yeoman](http://mikefowler.me/2013/10/28/coffeescript-source-maps-with-yeoman/)
+
+https://www.artandlogic.com/blog/2013/05/angularjs-best-practices-ive-been-doing-it-wrong-part-3-of-3/
+
+http://scotch.io/tutorials/javascript/angular-routing-using-ui-router
