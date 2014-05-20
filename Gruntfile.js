@@ -14,6 +14,12 @@ module.exports = function(grunt) {
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
+	
+	var karmaConfig = function(configFile, customOptions) {
+		var options = { configFile: configFile, keepalive: true };
+		var travisOptions = process.env.TRAVIS && { browsers: ['Chrome'], reporters: 'dots' };
+		return grunt.util._.extend(options, customOptions, travisOptions);
+	};
 
     // Define the configuration for all the tasks
     grunt.initConfig({
@@ -419,7 +425,13 @@ module.exports = function(grunt) {
             unit: {
                 configFile: 'karma.conf.js',
                 singleRun: true
-            }
+            },
+			watch: {
+				options: karmaConfig('karma.conf.js', {
+					singleRun: false,
+					autoWatch: true
+				})
+			}
         }
     });
 
