@@ -46,14 +46,18 @@ module.exports = function (grunt) {
       gruntfile: {
         files: ['Gruntfile.js']
       },
+      jade: {
+        files: ['<%= yeoman.app %>/{,*/}*.jade'],
+        tasks: ['jade:compile']
+      },
       livereload: {
         options: {
           livereload: '<%= connect.options.livereload %>'
         },
         files: [
-          '<%= yeoman.app %>/{,*/}*.html',
+          '{.tmp,<%= yeoman.app %>}/{,*/}*.html',
           '.tmp/styles/{,*/}*.css',
-          '.tmp/scripts/{,*/}*.js',
+          '{.tmp,<%= yeoman.app %>}/scripts/{,*/}*.js',
           '<%= yeoman.app %>/images/{,*/}*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -146,6 +150,25 @@ module.exports = function (grunt) {
       }
     },
 
+    jade: {
+        compile: {
+            options: {
+                data: {
+                    debug: false,
+                    title: 'My awesome application'
+                },
+                pretty: true
+            },
+            files: [{
+                expand: true,
+                cwd: '<%= yeoman.app %>/views',
+                src: ['**/*.jade'],
+                dest: '.tmp/views',
+                ext: '.html'
+            }]
+        }
+    },
+    
     // Compiles CoffeeScript to JavaScript
     coffee: {
       options: {
@@ -346,6 +369,7 @@ module.exports = function (grunt) {
       server: [
         'coffee:dist',
         'compass:server',
+        'jade',
         'copy:styles'
       ],
       test: [
@@ -356,6 +380,7 @@ module.exports = function (grunt) {
       dist: [
         'coffee',
         'compass:dist',
+        'jade',
         'copy:styles',
         'imagemin',
         'svgmin',

@@ -15,3 +15,11 @@ ECS
 
 Riak Interface
 Programmatic Interface
+
+bower install
+npm install
+npm install grunt-google-cdn
+
+
+
+[Coffeescript source maps with Yeoman](http://mikefowler.me/2013/10/28/coffeescript-source-maps-with-yeoman/)
