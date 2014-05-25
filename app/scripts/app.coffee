@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('pdsExplorerApp', [
+angular.module('angularapp', [
     'ngResource',
     'ngSanitize',
     'ui.router'

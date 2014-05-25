@@ -1,7 +1,7 @@
 html.no-js
     head
         meta(charset='utf-8')
-        title PDS Explorer
+        title Angular Application
         meta(name='description', content='')
         meta(name='viewport', content='width=device-width')
         
@@ -15,7 +15,7 @@ html.no-js
         link(rel='stylesheet', href='styles/main.css')
         //endbuild
         
-    body(ng-app='pdsExplorerApp')
+    body(ng-app='angularapp')
 
 		// Add your site or application content here
     .container(ui-view)

@@ -1,8 +1,8 @@
 {
-  "name": "pdsexplorer",
+  "name": "angularapp",
   "version": "0.0.0",
   "dependencies": {},
-  "description": "Chrome plugin to explore the PDS repositories",
+  "description": "angularapp",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-autoprefixer": "~0.4.0",
@@ -47,7 +47,7 @@
   },
   "repository": {
     "type": "svn",
-    "url": "http://subversion.palm.com/main/users/skommuri/prototype/pds-explorer"
+    "url": "http://subversion.palm.com/main/users/skommuri/prototype/angularapp"
   },
   "scripts": {
     "test": "grunt test"

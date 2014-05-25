@@ -1,6 +1,6 @@
 'use strict'
 
-angular.module('pdsExplorerApp')
+angular.module('angularapp')
   .controller 'MainCtrl', ($scope) ->
     $scope.awesomeThings = [
       'HTML5 Boilerplate'
